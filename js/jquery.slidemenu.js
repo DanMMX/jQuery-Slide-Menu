@@ -8,7 +8,7 @@
 				var $slidemenu = $(this),
 					data = $slidemenu.data("slidemenu"),
 					$backButton = $slidemenu.find(settings.backButton),
-					$menus = $slidemenu.find("ul:first-child").find("li"),
+					$menus = $slidemenu.find("> ul:first-child").find("li"),
 					$submenus, 
 					submenus = "";
 
@@ -17,7 +17,7 @@
 
 					$slidemenu.prepend($backButton);
 				}
-
+				
 				if ( !data ){
 					$slidemenu.data("slidemenu", { $backButton : $backButton });
 				}
@@ -30,12 +30,29 @@
 					$submenu.hide();
 
 					$elementList.click(function(){
-						if($($menus).filter(":animated").length == 0){
+						if($($submenus).filter(":animated").length == 0){
 							$elementList = $(this);
+							if($elementList.find(settings.backButton).length == 0)
+								if(settings.buttonFunction)
+									buttonFunction($backButton);
+								else
+									$backButton.slideToggle("fast");
+							else
+								if(settings.buttonFunction)
+									buttonFunction($elementList.find(settings.backButton));
+								else
+									$elementList.find(settings.backButton).slideToggle("slow");
+
 							$submenu = $slidemenu.find($elementList.attr("data-submenu"));
-							$submenu.slideToggle("slow");
-							$menus.not($elementList).slideToggle("slow");
-							$backButton.slideToggle("fast");
+							if(settings.submenuFunction)
+								submenuFunction($submenu);
+							else
+								$submenu.slideToggle("slow");
+
+							if(settings.menuFunction)
+								menuFunction($menus.not($elementList));
+							else
+								$menus.not($elementList).slideToggle("slow");
 						}
 					});
 				});
@@ -43,10 +60,10 @@
 				$submenus = $(submenus);
 
 				$backButton.hide().click(function(){
-					$submenus.not(":hidden").slideToggle("slow");
 					$menus.filter(":hidden").slideToggle("slow");
 
-					$(this).slideToggle("slow");
+					$submenus.not(":hidden").slideToggle("slow");
+					$backButton.not(":hidden").slideToggle("slow");
 				});
 
 				data = $slidemenu.data("slidemenu");
@@ -75,7 +92,6 @@
 	};
 
 	$.fn.slidemenu.defaults = {
-		"side" : "top",
 		"backButton" : ".backSlideMenuButton"
 	}
 	

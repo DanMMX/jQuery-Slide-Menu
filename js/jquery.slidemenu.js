@@ -56,7 +56,7 @@
 						}
 					});
 				});
-
+	
 				$submenus = $(submenus);
 
 				$backButton.hide().click(function(){
@@ -66,7 +66,13 @@
 					$backButton.not(":hidden").slideToggle("slow");
 				});
 
-				data = $slidemenu.data("slidemenu");
+				var hashVal = window.location.hash.split("#")[1];
+				if(hashVal !== "undefined"){
+					$slidemenu.find("[data-submenu=#"+hashVal+"]").click();
+
+					$(document).scrollTop(0);
+					$(".paper.menu.two-thirds.column").scrollTop(0);
+				}
 			});
 		},
 		destroy : function() {

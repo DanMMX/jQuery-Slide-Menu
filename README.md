@@ -3,17 +3,18 @@
 A custom jQuery.accordion-like plugin for jQuery.
 
 ## Usage ##
-
-$("#slideMenu").slidemenu();
-
+```console
+  $("#slideMenu").slidemenu();
+```
 ## Options ##
+```console
 
-{
-  backButton : ".backSlideMenuButton",
-  noBackButtons : false,
-  hideMenuOnClick : true
-}
-
+  {
+    backButton : ".backSlideMenuButton",
+    noBackButtons : false,
+    hideMenuOnClick : true
+  }
+```
 ### backButton ###
 Element created/took from the html to bind the back functionality. (Only available on small browsers/mobile.
 

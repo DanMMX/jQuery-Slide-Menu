@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Jquery-slide-menu : Slide menu jQuery plugin" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Jquery-slide-menu</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/DanMMX/jQuery-Slide-Menu">View on GitHub</a>
+
+          <h1 id="project_title">Jquery-slide-menu</h1>
+          <h2 id="project_tagline">Slide menu jQuery plugin</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/DanMMX/jQuery-Slide-Menu/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/DanMMX/jQuery-Slide-Menu/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="jquery-slide-menu" class="anchor" href="#jquery-slide-menu"><span class="octicon octicon-link"></span></a>jQuery-Slide-Menu</h1>
+
+<p>A custom jQuery.accordion-like plugin for jQuery.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a name="script" class="anchor" href="#script"><span class="octicon octicon-link"></span></a>Script</h3>
+
+<pre><code>  $("#slideMenu").slidemenu(options);
+</code></pre>
+
+<h3>
+<a name="html" class="anchor" href="#html"><span class="octicon octicon-link"></span></a>HTML</h3>
+
+<pre><code>&lt;article id="slideMenu"&gt;
+    &lt;div data-submenu="#menu-1"&gt;
+        &lt;span&gt;Menu 1&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;section id="menu-1"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;span&gt;Menu 1 - 1&lt;/span&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;span&gt;Menu 1 - 2&lt;/span&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;span&gt;Menu 1 - 3&lt;/span&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/section&gt;
+    &lt;div data-submenu="#menu-2"&gt;
+        &lt;span&gt;Menu 2&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;section id="menu-2"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;span&gt;Menu 2 - 1&lt;/span&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;span&gt;Menu 2 - 2&lt;/span&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;span&gt;Menu 2 - 3&lt;/span&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/section&gt;
+&lt;/article&gt;          
+</code></pre>
+
+<h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<div class="highlight highlight-console"><pre>
+<span class="go">  {</span>
+<span class="go">    backButton : ".backSlideMenuButton",</span>
+<span class="go">    noBackButtons : false,</span>
+<span class="go">    hideMenuOnClick : true,</span>
+<span class="go">    buttonFunction: function,</span>
+<span class="go">    menuFunction: function,</span>
+<span class="go">    submenuFunction: function</span>
+<span class="go">  }</span>
+</pre></div>
+
+<h3>
+<a name="backbutton" class="anchor" href="#backbutton"><span class="octicon octicon-link"></span></a>backButton</h3>
+
+<p>Element created/took from the html to bind the back functionality. (Only available on small browsers/mobile.</p>
+
+<h3>
+<a name="nobackbuttons" class="anchor" href="#nobackbuttons"><span class="octicon octicon-link"></span></a>noBackButtons</h3>
+
+<p>Make it true if you want to disable the backButton functionality. You wouldn't go back in a submenu.</p>
+
+<h3>
+<a name="hidemenuonclick" class="anchor" href="#hidemenuonclick"><span class="octicon octicon-link"></span></a>hideMenuOnClick</h3>
+
+<p>Show/Hide functionality binded to the same element to show it (useful on noBackButtons: true).</p>
+
+<h3>
+<a name="buttonfunction" class="anchor" href="#buttonfunction"><span class="octicon octicon-link"></span></a>buttonFunction</h3>
+
+<p>Accepts a function to execute when clicking on a back button or on a menu if not back button found/provided, sending the clicked object as an argument to the method called.
+If not provided, the default action is to slideToggle the button for showing/hiding.</p>
+
+<h3>
+<a name="menufunction" class="anchor" href="#menufunction"><span class="octicon octicon-link"></span></a>menuFunction</h3>
+
+<p>Accepts a function to execute when clicking a menu, sending all the menus but the one clicked to the function as an argument (the ones you want to hide/dissapear).
+If not provided, the default action is to slideToggle all the other menus.</p>
+
+<h3>
+<a name="submenufunction" class="anchor" href="#submenufunction"><span class="octicon octicon-link"></span></a>submenuFunction</h3>
+
+<p>Accepts a function to execute when a submenu is clicked, sending the submenu as an argument to the funcion.
+If not provided, the default action is to slideToggle the current submenu.</p>
+
+<h2>
+<a name="sites-using-this" class="anchor" href="#sites-using-this"><span class="octicon octicon-link"></span></a>Sites using this</h2>
+
+<h3>
+<a name="-wwwcbbmovilcom" class="anchor" href="#-wwwcbbmovilcom"><span class="octicon octicon-link"></span></a>* <a href="http://www.cbbmovil.com">www.cbbmovil.com</a>
+</h3>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Jquery-slide-menu maintained by <a href="https://github.com/DanMMX">DanMMX</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

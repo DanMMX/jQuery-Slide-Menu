@@ -80,3 +80,7 @@ If not provided, the default action is to slideToggle all the other menus.
 ### submenuFunction ###
 Accepts a function to execute when a submenu is clicked, sending the submenu as an argument to the funcion.
 If not provided, the default action is to slideToggle the current submenu.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/DanMMX/jquery-slide-menu/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+

@@ -1,4 +1,4 @@
-# jQuery-Slide-Menu #
+# [jQuery-Slide-Menu](http://danmmx.github.io/jQuery-Slide-Menu/) #
 
 A custom jQuery.accordion-like plugin for jQuery.
 
